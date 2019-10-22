@@ -11,9 +11,12 @@
 
 ### <ins> Folder Structure Description </ins>
 
-Flask Routes Images --> It contains the FLask Routes Snapshots
+<b> Flask Routes Images </b> --> It contains the FLask Routes Snapshots
 
-Climate Analysis Images --> It Contains the Hawaii Climate Analysis Graphs
+<b> Climate Analysis Images </b> --> It Contains the Hawaii Climate Analysis Graphs
+
+<b> Resources </b> --> It contains the sqlite & source files 
+
 
 ## Step 1 - Climate Analysis and Exploration
 
