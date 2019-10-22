@@ -3,9 +3,11 @@
 
 ![surfs-up.jpeg](surfs-up.jpeg)
 
-Step 1 --> Hawaii_Climate_Analysis.ipynb
+### <ins> Jupyter Notebook & Flask API </ins>
 
-Step 2 --> Hawaii_Climate_App.py
+<b> Step 1 </b> --> Hawaii_Climate_Analysis.ipynb
+
+<b> Step 2  </b> --> Hawaii_Climate_App.py
 
 ### <ins> Folder Structure Description </ins>
 
