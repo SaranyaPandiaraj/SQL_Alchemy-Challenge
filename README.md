@@ -7,7 +7,7 @@
 
 ### Precipitation Analysis
 
-  ![Precipitation_Analysis](Climate Analysis Images/Precipitation_Analysis.png)
+  ![Precipitation_Analysis](https://github.com/SaranyaPandiaraj/SQL_Alchemy-Challenge/tree/master/Climate%20Analysis%20Images/Precipitation_Analysis.png)
   
 ### Station Analysis
 
