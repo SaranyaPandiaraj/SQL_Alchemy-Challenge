@@ -1,7 +1,8 @@
 # SQL_Alchemy-Challenge - Surfs Ups!
 
+You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with the trip planning, we need to do some climate analysis on the area.
 
-![surfs-up.jpeg](surfs-up.jpeg)
+To begin, We have used Python and SQLAlchemy to do basic climate analysis and data exploration of our climate database. All of the following analysis has been completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
 ### <ins> Jupyter Notebook & Flask API </ins>
 
