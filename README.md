@@ -11,6 +11,9 @@
   
 ### Station Analysis
 
-   ![Station_tobs_Analysis](Climate Analysis Images/Station_tobs_Analysis.png)
+   ![Station_tobs_Analysis](Climate%20Analysis%20Images/Station_tobs_Analysis.png)
 
 ## Step 2 - Climate App - Flask API
+
+   ![Home Page](Flask%20Routes%20Images/Home_Page_Available_Routes.PNG)
+   
