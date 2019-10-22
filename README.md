@@ -32,6 +32,8 @@
 
    ![Home Page](Flask%20Routes%20Images/Home_Page_Available_Routes.PNG)
    
+   <b> The respective routes output are present in the Flask Routes Images</b>
+   
 ## Optional: Other Recommended Analyses
 
 ### <ins> Temperature Analysis </ins>
