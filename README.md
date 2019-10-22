@@ -7,10 +7,10 @@
 
 ### Precipitation Analysis
 
-  ![precipitation](Climate Analysis Images/Precipitation_Analysis.png)
+  ![precipitation](/Climate Analysis Images/Precipitation_Analysis.png)
   
 ### Station Analysis
 
-   ![station-histogram](Climate Analysis Images/Station_tobs_Analysis.png)
+   ![station-histogram](/Climate Analysis Images/Station_tobs_Analysis.png)
 
 ## Step 2 - Climate App - Flask API
