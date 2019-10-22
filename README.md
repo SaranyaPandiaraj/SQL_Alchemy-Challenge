@@ -3,13 +3,23 @@
 
 ![surfs-up.jpeg](surfs-up.jpeg)
 
+Step 1 --> Hawaii_Climate_Analysis.ipynb
+
+Step 2 --> Hawaii_Climate_App.py
+
+### <ins> Folder Structure Description </ins>
+
+Flask Routes Images --> It contains the FLask Routes Snapshots
+
+Climate Analysis Images --> It Contains the Hawaii Climate Analysis Graphs
+
 ## Step 1 - Climate Analysis and Exploration
 
 ### <ins> Precipitation Analysis </ins>
 
   ![Precipitation_Analysis](Climate%20Analysis%20Images/Precipitation_Analysis.png)
   
-### Station Analysis
+### <ins> Station Analysis </ins>
 
    ![Station_tobs_Analysis](Climate%20Analysis%20Images/Station_tobs_Analysis.png)
 
@@ -19,10 +29,10 @@
    
 ## Optional: Other Recommended Analyses
 
-### Temperature Analysis
+### <ins> Temperature Analysis </ins>
 
   ![Temperature_Analysis](Climate%20Analysis%20Images/Temperature_Analysis.png)
 
-### Daily Rainfall Average.
+### <ins> Daily Rainfall Average </ins>
 
   ![Daily Rainfall Average](Climate%20Analysis%20Images/Daily_Normals_Analysis.png)
