@@ -17,3 +17,12 @@
 
    ![Home Page](Flask%20Routes%20Images/Home_Page_Available_Routes.PNG)
    
+## Optional: Other Recommended Analyses
+
+### Temperature Analysis
+
+  ![Temperature_Analysis](Climate%20Analysis%20Images/Temperature_Analysis.png)
+
+### Daily Rainfall Average.
+
+  ![Daily Rainfall Average](Climate%20Analysis%20Images/Daily_Normals_Analysis.png)
