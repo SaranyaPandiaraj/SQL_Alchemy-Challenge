@@ -5,7 +5,7 @@
 
 ## Step 1 - Climate Analysis and Exploration
 
-### Precipitation Analysis
+### <ins> Precipitation Analysis </ins>
 
   ![Precipitation_Analysis](Climate%20Analysis%20Images/Precipitation_Analysis.png)
   
