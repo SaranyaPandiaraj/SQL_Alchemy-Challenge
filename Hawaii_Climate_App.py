@@ -45,25 +45,41 @@ def welcome():
     return (
         f"<center> <h2> Available Routes </h2> </center>"
         f"<hr/>"
-        f"<b> <ins> Percipitation Data : </ins> </b> <br/>"
+        f"<b> <ins> 1)  Percipitation Data </ins> </b> <br/>"
         f"<a href=http://127.0.0.1:5000/api/v1.0/precipitation>/api/v1.0/precipitation </a> <br/>"
         f" <br/>"
         
-        f"<b> <ins> Stations Data : </ins> </b> <br/>"
+        f"<b> <ins> 2)  Stations Data </ins> </b> <br/>"
         f"<a href=http://127.0.0.1:5000/api/v1.0/stations>/api/v1.0/stations </a> <br/>"
         f" <br/>"
         
-        f"<b> <ins> Temperature Observations (tobs) for the Previous Year: </ins> </b> <br/>"
+        f"<b> <ins> 3) Temperature Observations (tobs) for the Previous Year: </ins> </b> <br/>"
         f"<a href=http://127.0.0.1:5000/api/v1.0/tobs> /api/v1.0/tobs </a> <br/>"
         f" <br/>"
         
-        f"<b> <ins>`TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date: </ins> </b> <br/>"
-        f"/api/v1.0/<start><br/>"
+        f"<b> <ins> 4) Temperature Details for all dates greater than and equal to the Start Date </ins> </b> "
+        f" (Temperature Details --> Maximum, Minimum & Average Temperature) <br/>"
+        f" (/api/v1.0/Start Date) <br/><br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2017-01-01> /api/v1.0/2017-01-01 </a> <br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2016-01-01> /api/v1.0/2016-01-01 </a> <br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2015-01-01> /api/v1.0/2015-01-01 </a> <br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2014-01-01> /api/v1.0/2014-01-01 </a> <br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2013-01-01> /api/v1.0/2013-01-01 </a> <br/>"
         f" <br/>"
         
-        f"<b> <ins>`TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive: </ins> </b> <br/>"
-        f"/api/v1.0/<start>/<end><br/>"
         
+        f"<b> <ins> 5) Temperature Details for dates between the Start and End Date inclusive </ins> </b> "
+        f" (Temperature Details --> Maximum, Minimum & Average Temperature) <br/>"
+        f" (/api/v1.0/Start Date/End Date) <br/><br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2017-01-01/2017-01-15> /api/v1.0/2017-01-01/2017-01-15 </a><br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2016-01-01/2016-01-15> /api/v1.0/2016-01-01/2016-01-15 </a><br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2015-01-01/2015-01-15> /api/v1.0/2015-01-01/2015-01-15 </a><br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2014-01-01/2014-01-15> /api/v1.0/2014-01-01/2014-01-15 </a><br/>"
+        f"<a href=http://127.0.0.1:5000/api/v1.0/2013-01-01/2013-01-15> /api/v1.0/2013-01-01/2013-01-15 </a><br/>"
+        f" <br/>"
+        
+        f"<b> Note : The above are just the Sample Start & End Dates."
+        f" We can even modify the Start & End dates to retrieve the Temperature Details for the 4th and 5th Routes.</b>"
         f"<hr/>"
         
     )
@@ -127,21 +143,38 @@ def tobs():
     return jsonify({'Temperature Observations (tobs) data for the previous year' :Temp_Observed_Data_List})
 
 @app.route("/api/v1.0/<start>")
-def start_temp(start=None):
+def Temp_Data_By_Start(start=None):
 
-    start_temps = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs),func.max(Measurement.tobs)).\
-                  filter(Measurement.date >= start).all()
+    Temp_Data_ByStart = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs),func.max(Measurement.tobs)).\
+                       filter(Measurement.date >= start).all()
 
 
-start_list = list()
-for tmin, tavg, tmax in start_temps:
-            start_dict = {}
-            start_dict["Min Temp"] = tmin
-            start_dict["Max Temp"] = tavg
-            start_dict["Avg Temp"] = tmax
-            start_list.append(start_dict)
+    Temp_Data_ByStart_List = []
+    for TMIN, TAVG, TMAX in Temp_Data_ByStart:
+            Temp_Data_ByStart_dict = {}
+            Temp_Data_ByStart_dict["Min Temp"] = TMIN
+            Temp_Data_ByStart_dict["Max Temp"] = TAVG
+            Temp_Data_ByStart_dict["Avg Temp"] = TMAX
+            Temp_Data_ByStart_List.append(Temp_Data_ByStart_dict)
 
-        return jsonify ({'Data':start_list})
+    return jsonify ({f"Minimum, Maximum & Average Temperature Details for all dates greater than and equal to {start}":Temp_Data_ByStart_List})
+
+@app.route("/api/v1.0/<start>/<end>")
+def Temp_Data_By_Start_End(start=None,end=None):
+
+    Temp_Data_ByStartEnd = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs),func.max(Measurement.tobs)).\
+                       filter(Measurement.date >= start,Measurement.date <= end).all()
+
+
+    Temp_Data_ByStartEnd_List = []
+    for TMIN, TAVG, TMAX in Temp_Data_ByStartEnd:
+            Temp_Data_ByStartEnd_dict = {}
+            Temp_Data_ByStartEnd_dict["Min Temp"] = TMIN
+            Temp_Data_ByStartEnd_dict["Max Temp"] = TAVG
+            Temp_Data_ByStartEnd_dict["Avg Temp"] = TMAX
+            Temp_Data_ByStartEnd_List.append(Temp_Data_ByStartEnd_dict)
+
+    return jsonify ({f" Minimum, Maximum & Average Temperature Details for dates between {start} and {end} ":Temp_Data_ByStartEnd_List})
 
 
 if __name__ == '__main__':
